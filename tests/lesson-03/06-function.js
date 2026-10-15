@@ -29,7 +29,15 @@ function findMin1(a,b,c){
 
 console.log(`in ra so nho nhat ${findMin1(2,4,6)}`);
 
+function findMin2(a,b,c){
+    return a<b && a<c ? a
+         : b<a && b<c ? b
+         : c;
+}
+console.log(findMin2(4,6,1));
+
 //3. Viết hàm getTopStudents nhận 2 tham số
+
 
 let students = [
     { Name: "Nguyên", score: 7 },
@@ -45,17 +53,20 @@ let students = [
     { Name: "Dung", score: 5 },
     { Name: "Loan", score: 7 }
 ];
-let arr = [];
-function getTopStudents (threshold){
- for (let i=0; i < students.length; i++){
-     if (students[i].score > threshold) {
-        arr.push(students[i]);
+
+function getTopStudents(students, threshold) {
+    let arr = [];
+
+    for (let i of students) {
+        i.score >= threshold ? arr.push(i) : null;
     }
- }
- return arr;
+
+    return arr;
 }
 
-console.log(`In ra những học sinh Top ${getTopStudents(6)}`);
+console.log(getTopStudents(students, 6));
+
+
 
 //4. Viet ham calulateInterest nhận 3 tham số
 

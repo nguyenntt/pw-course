@@ -59,7 +59,14 @@ let doanhThu = [
     { month: 11, total: 50 },
     { month: 12, total: 700 }
 ];
+/*
 for(i=0;i<doanhThu.length;i++){
     suminyear = suminyear + doanhThu[i].total;
+}
+console.log(`doanh thu trong một năm là ${suminyear}`);
+
+*/
+for (let i of doanhThu){
+    suminyear += i.total;
 }
 console.log(`doanh thu trong một năm là ${suminyear}`);
